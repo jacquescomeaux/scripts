@@ -16,7 +16,7 @@ instance Exception UsageException
 
 main :: IO ()
 main = runSimpleApp $ do
-    args <- liftRIO getArgs
+    args <- liftIO getArgs
     filename <- case L.headMaybe args of
         Nothing -> throwIO UsageException
         Just x -> pure x
